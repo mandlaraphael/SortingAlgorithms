@@ -8,10 +8,9 @@ public class MergeSort {
        int k = startIdx;
        int i = startIdx ;
        int j = middleIdx + 1;
+
        while (i <= middleIdx && j <= endIdx) {
-            // Values to change color.
             animations.add(new int[] {i, j});
-            // Values to revert color.
             animations.add(new int[] {i, j});
            if (auxiliaryArray[i] <= auxiliaryArray[j]) {
                animations.add(new int[] {k, auxiliaryArray[i]});
@@ -22,17 +21,13 @@ public class MergeSort {
            }
        }
        while (i <= middleIdx) {
-            // Values to change color.
            animations.add(new int[] {i, i});
-            // Values to revert color.
            animations.add(new int[] {i, i});
            animations.add(new int[] {k, auxiliaryArray[i]});
            mainArray[k++] = auxiliaryArray[i++];
        }
        while (j <= endIdx) {
-           // Values to change color.
            animations.add(new int[] {j, j});
-           // Values to revert color.
            animations.add(new int[] {j, j});
            animations.add(new int[] {k, auxiliaryArray[j]});
            mainArray[k++] = auxiliaryArray[j++];
